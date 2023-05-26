@@ -1,7 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @article %>
-
+<% @article.photos.each do |photo|  %>
+  <%= cl_image_tag(photo.key) %>    
+<% end %>
 <div>
   <%= link_to "Edit this article", edit_article_path(@article) %> |
   <%= link_to "Back to articles", root_path %>
